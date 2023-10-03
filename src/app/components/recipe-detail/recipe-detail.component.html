@@ -1,1 +1,12 @@
-<p>recipe-detail works!</p>
+<div *ngIf="recipe">
+    <img src="{{recipe.url}}" alt="">
+    <span>{{recipe.name}}</span>
+    <span>{{recipe.category | categoryToString}}</span>
+    <span *ngFor="let ingredient of recipe.ingredients">{{ingredient}}</span>
+    <span>{{recipe.description}}</span>
+    <button mat-button color="primary" (click)="deleteRecipe()">Delete</button>
+    <button appSuperButton> Elimina la ricetta</button>
+
+
+
+</div>

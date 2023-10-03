@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  readonly DB_URL = "https://651a7a8d340309952f0d59b1.mockapi.io/recipe"
+  readonly DB_URL = "https://651bbddc194f77f2a5aec940.mockapi.io/recipe"
 
   constructor(private http: HttpClient) { }
 
@@ -22,5 +22,9 @@ export class DataService {
 
   postRecipe(newRecipe: Recipe):Observable<Recipe>{
     return this.http.post<Recipe>(this.DB_URL, newRecipe, {headers: {'content-type':'application/json'}})
+  }
+  deleteRecipe(id:string){
+    return this.http.delete<Recipe>(this.DB_URL + '/'+ id)
+
   }
 }

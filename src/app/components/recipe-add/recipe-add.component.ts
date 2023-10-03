@@ -29,7 +29,7 @@ export class RecipeAddComponent {
 
   submitRecipe(){
     console.log(this.newRecipe)
-    //this.dataServ.postRecipe(this.newRecipe).subscribe(addedRecipe => console.log(addedRecipe));
+    this.dataServ.postRecipe(this.newRecipe).subscribe(addedRecipe => console.log(addedRecipe));
   }
 
 }

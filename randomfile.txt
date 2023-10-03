@@ -1,0 +1,1 @@
+i componenti stand alone hanno tutte le inclusioni nel loro file e quando viene importato, viene importato nell'appjs non come description ma come module
