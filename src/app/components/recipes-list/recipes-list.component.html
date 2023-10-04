@@ -1,5 +1,15 @@
-<mat-grid-list cols="3">
+<div class="container">
+  <mat-form-field>
+    <mat-label>Filtra per categoria</mat-label>
+    <mat-select [(value)]="selectedCategory" (valueChange)="categoryChanged()">
+      <mat-option value="-1">tutti</mat-option>
+      <mat-option value="{{el[1]}}" *ngFor="let el of categories">{{el[0]}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <span>{{selectedCategory}}</span>
+  <mat-grid-list class="grid" cols="4">
     <mat-grid-tile *ngFor="let recipe of recipes">
       <app-recipe-card [recipe]="recipe"></app-recipe-card>
     </mat-grid-tile>
   </mat-grid-list>
+</div>

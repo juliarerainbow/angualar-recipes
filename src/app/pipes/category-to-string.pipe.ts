@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { DishType } from '../model/recipe';
 
 @Pipe({
   name: 'categoryToString',
@@ -7,15 +8,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CategoryToStringPipe implements PipeTransform {
 
   transform(value: number): string {
-    const categoryStrings=[
-      'antipasto',
-      'primo',
-      'secondo',
-      'contorno',
-      'dessert',
-      'cocktail'
-    ]
-    return categoryStrings[value];
+    return DishType[value];
   }
 
 }

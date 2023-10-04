@@ -1,19 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from '../model/recipe';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+  allRecipes = new BehaviorSubject<Recipe[]>([]);
 
   readonly DB_URL = "https://651bbddc194f77f2a5aec940.mockapi.io/recipe"
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.getAllRecipes();
+  }
 
-  getAllRecipes():Observable<Recipe[]>{
-    return this.http.get<Recipe[]>(this.DB_URL);
+  getAllRecipes():void{
+    this.http.get<Recipe[]>(this.DB_URL).subscribe(recipes=>this.allRecipes.next(recipes));
   }
 
   getRecipe(recipeId: string):Observable<Recipe>{
@@ -27,4 +30,6 @@ export class DataService {
     return this.http.delete<Recipe>(this.DB_URL + '/'+ id)
 
   }
+
+
 }

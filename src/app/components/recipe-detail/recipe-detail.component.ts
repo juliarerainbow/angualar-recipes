@@ -6,6 +6,7 @@ import { Recipe } from 'src/app/model/recipe';
 import { CategoryToStringPipe } from 'src/app/pipes/category-to-string.pipe';
 import { MatButtonModule } from '@angular/material/button';
 import { SuperButtonDirective } from 'src/app/directives/super-button.directive';
+//pipe
 
 @Component({
   selector: 'app-recipe-detail',
@@ -13,7 +14,7 @@ import { SuperButtonDirective } from 'src/app/directives/super-button.directive'
   imports: [CommonModule, 
             CategoryToStringPipe,
             MatButtonModule,
-            SuperButtonDirective],
+            SuperButtonDirective,CategoryToStringPipe],
   templateUrl: './recipe-detail.component.html',
   styleUrls: ['./recipe-detail.component.scss'],
 })

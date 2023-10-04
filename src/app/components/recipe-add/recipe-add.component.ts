@@ -22,7 +22,8 @@ export class RecipeAddComponent {
     ingredients: [],
     description: '',
     category: 0,
-    url: ''
+    url: '',
+    rating: 0
   };
 
   constructor(private dataServ: DataService){}

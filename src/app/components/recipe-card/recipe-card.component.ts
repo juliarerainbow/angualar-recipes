@@ -5,11 +5,13 @@ import {MatCardModule} from '@angular/material/card';
 import { Recipe } from 'src/app/model/recipe';
 import { RouterModule } from '@angular/router';
 import { CategoryToStringPipe } from 'src/app/pipes/category-to-string.pipe';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { RepeatDirective } from 'src/app/directives/repeat.directive';
 
 @Component({
   selector: 'app-recipe-card',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule,RouterModule,CategoryToStringPipe],
+  imports: [CommonModule,MatIconModule, MatCardModule, MatButtonModule,RouterModule,CategoryToStringPipe,RepeatDirective],
   templateUrl: './recipe-card.component.html',
   styleUrls: ['./recipe-card.component.scss'],
   
